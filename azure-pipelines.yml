@@ -8,6 +8,12 @@
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # Test and package your PHP project.
 # Add steps that run tests, save build artifacts, deploy, and more:
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    appType: 'webApp'
+    WebAppName: zan-music
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 # https://docs.microsoft.com/azure/devops/pipelines/languages/php
 
 trigger:
